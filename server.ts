@@ -1,6 +1,6 @@
 import { log } from 'console';
 import { Socket } from 'dgram'
-import net from 'net':
+import net from 'net';
 
 const server = net.createServer((Socket) => {
     console.log('Client connected'); 
