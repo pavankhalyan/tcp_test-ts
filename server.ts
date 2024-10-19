@@ -8,7 +8,21 @@ const server = net.createServer((Socket) => {
     Socket.on('data', (data) => {
         console.log('Received data from client:', data.toString());
 
-    Socket.write('Hello from server');
-        
-    })
+    Socket.write('Hello from server');   
+    }) 
+
+
+    Socket.on('end', () => {
+        console.log('Client disconnected');
+    })  
+    
+    Socket.on('error',(err) => {
+        console.log('Error:', err);
+    }) 
+})   
+
+server.listen(3000, () => {
+    console.log('Server is listening on port 3000');
 })
+
+
